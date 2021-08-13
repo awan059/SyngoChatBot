@@ -1,0 +1,24 @@
+---
+category:
+- Plaza_initial_enquiry
+conversations:
+- - yeah
+  - Alright, Where are you stuck? (precheck, export, install, upgrade, Migration, import, postcheck, workflow)
+- - nope
+  - How may I assist you, then?
+- - precheck
+  - Could you please tell me the step which is failed?(specific step, Failed to connect to server)
+- - export
+  - Could you please tell me the step which is failed?
+- - import
+  - Could you please tell me the step which is failed?
+- - postcheck
+  - Could you please tell me the step which is failed?
+- - install
+  - What is the version of syngo.plaza that you're attempting to install?
+- - upgrade
+  - What is the version of syngo.plaza that you're attempting to upgrade to?
+- - migration
+  - What is the version of syngo.plaza that you're attempting to migrate to?
+- - workflow
+  - Could you please let me know where you're facing issue? (storage, archive, dearchive, retrieve, c-move, hl7, autodelete, export, load, others)

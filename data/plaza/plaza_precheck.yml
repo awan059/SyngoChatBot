@@ -1,0 +1,9 @@
+category:
+- Prechecks
+conversations:
+- - Failed to connect to server
+  - Please refer SKB :- SKB0038692. Do let me know if this SKB helped. (Helped, Did not help)
+- - helped
+  - Glad to know I was of some help to you. Hope you dont need me in future ☺️.
+- - specific step
+  - Alright, please tell me the failed step name.

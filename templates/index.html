@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="/static/style.css">
+<!--script src="<a href="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js</a>"></script-->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+</head>
+<body>
+<h1>Syngo Chat Box</h1>
+<div id="pannel">
+<div id="chatbox">
+<p class="botText"><span>Hi! I'm Lisa. I am here to assist you.</span></p>
+<p class="botText"><span>Are you facing any issue with syngo.plaza? (Yeah/Nope)</span></p>
+</div>
+<div id="userInput">
+<input id="textInput" type="text" name="msg" placeholder="Message" autofocus = {true}>
+<input id="buttonInput" type="submit" value="Send">
+</div>
+<script>
+function getBotResponse() {
+var rawText = $("#textInput").val();
+var userHtml = '<p class="userText"><span>' + rawText + '</span></p>';
+$("#textInput").val("");
+$("#chatbox").append(userHtml);
+document.getElementById('userInput').scrollIntoView({block: 'start', behavior: 'smooth'});
+var objDiv = document.getElementById("chatbox");
+objDiv.scrollTop = objDiv.scrollHeight;
+console.log(objDiv.scrollTop, objDiv.scrollHeight);
+$.get("/get", { msg: rawText }).done(function(data) {
+var botHtml = '<p class="botText"><span>' + data + '</span></p>';
+$("#chatbox").append(botHtml);
+document.getElementById('userInput').scrollIntoView({block: 'start', behavior: 'smooth'});
+objDiv = document.getElementById("chatbox");
+objDiv.scrollTop = objDiv.scrollHeight;
+console.log(objDiv.scrollTop, objDiv.scrollHeight);
+});
+}
+
+$("#textInput").keypress(function(e) {
+if ((e.which == 13) && document.getElementById("textInput").value != "" ){
+    getBotResponse();
+}
+});
+
+$("#buttonInput").click(function() {
+getBotResponse();
+})
+
+</script>
+</div>
+</body>
+</html>
